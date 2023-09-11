@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block app_content %}
+    <h1>{{ _('Kontakt löschen') }}</h1>
+    <p>Möchten Sie den Kontakt "{{ contact.vorname }} {{ contact.nachname }}" wirklich löschen?</p>
+    <form method="post">
+        <input type="hidden" name="confirm_delete" value="yes">
+        <button type="submit" class="btn btn-danger">Ja, löschen</button>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Nein, abbrechen</a>
+    </form>
+{% endblock %}
+

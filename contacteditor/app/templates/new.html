@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Neuer Kontakt
+{% endblock %}
+
+{% block app_content %}
+    <h1>Neuer Kontakt</h1>
+    <form method="POST" action="{{ url_for('new') }}">
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+            {{ form.vorname.label(class="form-label") }}
+            {{ form.vorname(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.nachname.label(class="form-label") }}
+            {{ form.nachname(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.email.label(class="form-label") }}
+            {{ form.email(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.telephonenumber.label(class="form-label") }}
+            {{ form.telephonenumber(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.function.label(class="form-label") }}
+            {{ form.function(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.klasse.label(class="form-label") }}
+            {{ form.klasse(class="form-control") }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Kontakt hinzufügen</button>
+    </form>
+{% endblock %}
+

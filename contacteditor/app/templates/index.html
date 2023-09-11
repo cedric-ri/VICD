@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>{{ _('Kontakte') }}</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Vorname</th>
+                <th>Nachname</th>
+                <th>E-Mail</th>
+                <th>Telefon</th>
+                <th>Funktion</th>
+                <th>Klasse</th>
+                <th>Aktionen</th>  <!-- Hinzugefügte Spalte für Aktionen -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in contacts %}
+                <tr>
+                    <td>{{ contact.vorname }}</td>
+                    <td>{{ contact.nachname }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>{{ contact.telephonenumber or '' }}</td>
+                    <td>{{ contact.function or '' }}</td>
+                    <td>{{ contact.klasse or '' }}</td>
+                    <td>
+                        <a href="{{ url_for('delete_contact', id=contact.id) }}" class="btn btn-warning">Löschen</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

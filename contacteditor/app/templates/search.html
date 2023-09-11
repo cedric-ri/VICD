@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block app_content %}
+    <h1>Suche</h1>
+    <form method="POST" action="/search" class="form-inline">
+        <div class="form-group">
+            <input type="text" name="q" class="form-control" placeholder="Suchbegriff eingeben" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Suchen</button>
+    </form>
+{% endblock %}
+
